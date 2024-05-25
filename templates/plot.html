@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Gráficos Generados</title>
+  </head>
+  <body>
+    <h1>Gráficos Generados</h1>
+    {% for plot_url in plot_urls %}
+      <img src="data:image/png;base64,{{ plot_url }}" alt="Gráfico"><br><br>
+    {% endfor %}
+    <a href="/">Generar Otros Gráficos</a>
+  </body>
+</html>

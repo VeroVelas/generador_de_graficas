@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Generador de Gráficos</title>
+  </head>
+  <body>
+    <h1>Subir Dataset</h1>
+    <form action="/upload" method="post" enctype="multipart/form-data">
+      <input type="file" name="file">
+      <button type="submit">Subir</button>
+    </form>
+    <h2>O seleccionar un dataset de prueba</h2>
+    <form action="/auto_generate" method="get">
+      <label for="dataset">Dataset:</label>
+      <select name="dataset" id="dataset">
+        {% for dataset in datasets %}
+        <option value="{{ dataset }}">{{ dataset }}</option>
+        {% endfor %}
+      </select><br><br>
+      <button type="submit">Generar Gráficos Automáticamente</button>
+    </form>
+  </body>
+</html>
